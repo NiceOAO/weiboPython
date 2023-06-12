@@ -1,20 +1,16 @@
-# This is a sample Python script.
-
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import requests
 import json
 
 from six.moves import urllib
 
 
-def getPicuri(uid):
+def get_pic_uri(uid):
     url = 'https://m.weibo.cn/api/container/getIndex?type=uid&value={}&containerid=107603{}&page={}'
     headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
+                      'Chrome/58.0.3029.110 Safari/537.36'
     }
-    page_num = 202
+    page_num = 198
     print('==================当前是第' + str(page_num) + '页======================')
     while True:
         print('==================当前是第' + str(page_num) + '页======================')
@@ -50,8 +46,5 @@ def re_down(url, filename):
         re_down(url, filename)
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    getPicuri('2339808364')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    get_pic_uri('2339808364')
